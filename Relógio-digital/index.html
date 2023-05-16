@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo&family=Open+Sans&display=swap" rel="stylesheet">
@@ -10,7 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relógio</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="assets/relogio-inteligente.png">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
@@ -33,24 +34,56 @@
 
     </div>
 
-    <div class="alarme">
-        <div class="despertador">
-                <h3>Despertador :</h3>
-        </div>
+    <div class="habilitar">
+        <button id = "habilitar" onclick = abrirJanela()>Habilitar Alarme</button>
+    </div>
 
-        <div class="timer">
-            <input class="hr" type="text" placeholder="Horas">
-            <span>:</span>
-            <input class="min" type="text" placeholder="Minutos">
-            <span>:</span>
-            <input class="sec" type="text" placeholder="Segundos">
+    
+        <div id="editarAlarme" class="editar" display style = "display: none;">
+            <div class="header">
+                <span>Editar um Alarme</span>
+                <button class = "fechar" onclick = fecharJanela()>X</button>
+            </div>
+            
+            <div>
+                <div class="horario">
+                    <input type="text" placeholder="Horas">
+                
+                    <input type="text" placeholder="Minutos">
+                </div>
+
+                <div class="audio">
+                    <div class="som">
+                        <div class="volume">
+                            <span>Volume :</span>
+                            <input type="range">
+                        </div>
+                        <div class="check">
+                            <input type="checkbox">
+                            <span>Repetir som</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="titulo">
+                    <div>
+                        <input type="text" placeholder="Nome para o alarme">
+                    </div>
+                </div>
+            </div>
+        
+            <div class="footer">
+                    <div>
+                        <button>Cancelar</button>
+                    </div>
+                    <div>
+                        <button id = "start" >Iniciar</button>
+                    </div>
+            </div>
         </div>
     
-        <div class="ativarParar">
-            <button id="ativar">Ativar</button>
-            <button id="parar">Parar</button>
-        </div>
-    </div>
-    <script src="./javascript/script.js"></script>
+        
+    <div id="overlay" style="display: none;"></div>
+    <script src="assets/javascript/script.js"></script>
 </body>
 </html>
